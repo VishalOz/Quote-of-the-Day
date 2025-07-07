@@ -1,5 +1,5 @@
 import express from 'express'
-import { cors } from 'cors'
+import cors from 'cors'
 
 
 const PORT = 5000
@@ -11,7 +11,8 @@ const quotes = [
   "The greatest glory in living lies not in never falling, but in rising every time we fall. – Nelson Mandela",
   "Your time is limited, don't waste it living someone else's life. – Steve Jobs",
   "If you look at what you have in life, you'll always have more. – Oprah Winfrey",
-  "The purpose of our lives is to be happy. – Dalai Lama"
+  "The purpose of our lives is to be happy. – Dalai Lama",
+  "Bahukapan cri thattaya. – Vishal Oshada"
 ];
 
 app.get('/api/quote', (req, res) => {
