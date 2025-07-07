@@ -1,6 +1,23 @@
 import React from 'react'
+import { useState } from 'react'
 
 const App = () => {
+  const [quote, setQuote] = useState();
+  const [loading, setLoading] = useState(flase);
+
+  const fetchQuote = async = () => {
+    setLoading(true);
+    try {
+      const res = await fetch("http://localhost:5000/api/quote");
+      const data = await res.json();
+      setQuote(data.quote);
+    }catch(err) {
+      setQuote("⚠️ Failed to fetch quote.");
+      console.error(err);
+    }finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="flex justify-center items-center h-[100vh] bg-blue-900">
       <div className="w-[600px] h-[500px] bg-gray-300 rounded-md shadow-lg p-5">
